@@ -1,8 +1,8 @@
 #!/bin/bash
 
-chown -R khycnar "*"
+chown -R khycnar *
 
-chgrp -R users "*"
+chgrp -R users *
 
 # Set execute permissions for directories
 find . -type d -exec chmod 755 {} +
