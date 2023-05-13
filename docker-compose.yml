@@ -37,6 +37,7 @@ services:
       context: elasticsearch/
       args:
         ELK_VERSION: ${ELK_VERSION}
+    user: root
     restart: unless-stopped
     environment:
       ELASTIC_USERNAME: ${ELASTIC_USERNAME}
@@ -81,6 +82,7 @@ services:
       context: logstash/
       args:
         ELK_VERSION: $ELK_VERSION
+    user: root
     restart: unless-stopped
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:Z
@@ -106,6 +108,7 @@ services:
       context: kibana/
       args:
         ELK_VERSION: $ELK_VERSION
+    user: root
     restart: unless-stopped
     volumes:
       - ./kibana/config/:/usr/share/kibana/config:Z
@@ -131,6 +134,7 @@ services:
       context: apm-server/
       args:
         ELK_VERSION: $ELK_VERSION
+    user: root
     restart: unless-stopped
     ports:
       - "8200:8200"
