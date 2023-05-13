@@ -35,7 +35,7 @@ keystore() {
 }
 
 all() {
-    $DOCKER_COMPOSE_COMMAND "${COMPOSE_ALL_FILES}" up -d --build "${ELK_MAIN_SERVICES}"
+    $DOCKER_COMPOSE_COMMAND ${COMPOSE_ALL_FILES} up -d --build ${ELK_MAIN_SERVICES}
 }
 
 elk() {
