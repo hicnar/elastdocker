@@ -23,9 +23,9 @@ services:
       ES_JAVA_OPTS: -Xmx${ELASTICSEARCH_HEAP} -Xms${ELASTICSEARCH_HEAP} -Des.enforce.bootstrap.checks=true
       bootstrap.memory_lock: "true"
     volumes:
-      - elasticsearch-data-1:/usr/share/elasticsearch/data
-      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - ./elasticsearch/config/log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties
+      - elasticsearch-data-1:/usr/share/elasticsearch/data:Z
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:Z
+      - ./elasticsearch/config/log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties:Z
     secrets:
       - source: elasticsearch.keystore
         target: /usr/share/elasticsearch/config/elasticsearch.keystore
@@ -59,9 +59,9 @@ services:
       ES_JAVA_OPTS: -Xmx${ELASTICSEARCH_HEAP} -Xms${ELASTICSEARCH_HEAP} -Des.enforce.bootstrap.checks=true
       bootstrap.memory_lock: "true"
     volumes:
-      - elasticsearch-data-2:/usr/share/elasticsearch/data
-      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - ./elasticsearch/config/log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties
+      - elasticsearch-data-2:/usr/share/elasticsearch/data:Z
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:Z
+      - ./elasticsearch/config/log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties:Z
     secrets:
       - source: elasticsearch.keystore
         target: /usr/share/elasticsearch/config/elasticsearch.keystore

@@ -48,9 +48,9 @@ services:
       ES_JAVA_OPTS: "-Xmx${ELASTICSEARCH_HEAP} -Xms${ELASTICSEARCH_HEAP} -Des.enforce.bootstrap.checks=true -Dlog4j2.formatMsgNoLookups=true"
       bootstrap.memory_lock: "true"
     volumes:
-      - elasticsearch-data:/usr/share/elasticsearch/data
-      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - ./elasticsearch/config/log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties
+      - elasticsearch-data:/usr/share/elasticsearch/data:Z
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:Z
+      - ./elasticsearch/config/log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties:Z
     secrets:
       - source: elasticsearch.keystore
         target: /usr/share/elasticsearch/config/elasticsearch.keystore
@@ -83,9 +83,9 @@ services:
         ELK_VERSION: $ELK_VERSION
     restart: unless-stopped
     volumes:
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
-      - ./logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro
-      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:Z
+      - ./logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml:Z
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:Z
     secrets:
       - source: elastic.ca
         target: /certs/ca.crt
@@ -108,7 +108,7 @@ services:
         ELK_VERSION: $ELK_VERSION
     restart: unless-stopped
     volumes:
-      - ./kibana/config/:/usr/share/kibana/config:ro
+      - ./kibana/config/:/usr/share/kibana/config:Z
     environment:
       ELASTIC_USERNAME: ${ELASTIC_USERNAME}
       ELASTIC_PASSWORD: ${ELASTIC_PASSWORD}
@@ -135,7 +135,7 @@ services:
     ports:
       - "8200:8200"
     volumes:
-      - ./apm-server/config/apm-server.yml:/usr/share/apm-server/apm-server.yml:ro
+      - ./apm-server/config/apm-server.yml:/usr/share/apm-server/apm-server.yml:Z
     environment:
       ELASTIC_USERNAME: ${ELASTIC_USERNAME}
       ELASTIC_PASSWORD: ${ELASTIC_PASSWORD}
