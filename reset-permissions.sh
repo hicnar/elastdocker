@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo su
-
 chown -R khycnar "*"
 
 chgrp -R users "*"
