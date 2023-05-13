@@ -1,5 +1,11 @@
 #!/bin/bash
 
+sudo su
+
+chown -R khycnar "*"
+
+chgrp -R users "*"
+
 # Set execute permissions for directories
 find . -type d -exec chmod 755 {} +
 
@@ -9,6 +15,3 @@ find . -type f ! -name "*.sh" -exec chmod 644 {} +
 # Set execute permissions for shell scripts
 find . -type f -name "*.sh" -exec chmod 755 {} +
 
-chown -R khycnar "*"
-
-chgrp -r users "*"
