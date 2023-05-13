@@ -14,4 +14,3 @@ find . -type f ! -name "*.sh" -exec chmod 644 {} +
 
 # Set execute permissions for shell scripts
 find . -type f -name "*.sh" -exec chmod 755 {} +
-
