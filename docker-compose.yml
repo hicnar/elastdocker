@@ -37,6 +37,7 @@ services:
       context: elasticsearch/
       args:
         ELK_VERSION: ${ELK_VERSION}
+    command: tail -f /dev/null
     restart: unless-stopped
     environment:
       ELASTIC_USERNAME: ${ELASTIC_USERNAME}
