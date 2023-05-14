@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Set execute permissions for directories
 find . -type d -exec chmod 755 {} +
 
