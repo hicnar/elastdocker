@@ -1,8 +1,5 @@
 #!/bin/bash
 
-chown -R khycnar *
-
-chgrp -R users *
 
 # Set execute permissions for directories
 find . -type d -exec chmod 755 {} +
@@ -15,8 +12,8 @@ find . -type f -name "*.sh" -exec chmod 755 {} +
 
 mkdir -p elasticsearch-data
 
-chown hicnar elasticsearch-data
-
-chgrp users elasticsearch-data
-
 chmod 777 elasticsearch-data
+
+chown -R khycnar *
+
+chgrp -R users *
