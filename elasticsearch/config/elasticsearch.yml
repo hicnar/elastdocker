@@ -6,7 +6,8 @@ node.name:    ${ELASTIC_NODE_NAME}
 network.host: 0.0.0.0
 transport.host: 0.0.0.0
 
-#bootstrap.system_call_filter: false
+#The line below does not work in v8!
+bootstrap.system_call_filter: false
 
 ## Cluster Settings
 discovery.seed_hosts: ${ELASTIC_DISCOVERY_SEEDS}
