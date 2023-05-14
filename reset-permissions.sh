@@ -1,5 +1,9 @@
 #!/bin/bash
 
+mkdir -p elasticsearch-data
+
+chmod 777 elasticsearch-data
+
 chown -R khycnar *
 
 chgrp -R users *
