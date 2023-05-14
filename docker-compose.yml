@@ -49,7 +49,6 @@ services:
       ES_JAVA_OPTS: "-Xmx${ELASTICSEARCH_HEAP} -Xms${ELASTICSEARCH_HEAP} -Des.enforce.bootstrap.checks=true -Dlog4j2.formatMsgNoLookups=true"
       bootstrap.memory_lock: "true"
     volumes:
-      - ./logs:/usr/share/elasticsearch/logs
       - ./elasticsearch-data:/usr/share/elasticsearch/data:Z
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:Z
       - ./elasticsearch/config/log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties:Z
