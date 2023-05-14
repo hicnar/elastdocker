@@ -15,4 +15,8 @@ find . -type f -name "*.sh" -exec chmod 755 {} +
 
 mkdir -p elasticsearch-data
 
+chown hicnar elasticsearch-data
+
+chgrp users elasticsearch-data
+
 chmod 777 elasticsearch-data
