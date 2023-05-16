@@ -23,4 +23,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:Z
       - ./filebeat-data:/var/lib/filebeat/data:Z
     ports:
-      - ${FILEBEATS_PORT}:${FILEBEATS_PORT}
+      - "5066:5066"
