@@ -10,27 +10,27 @@ filebeat.config:
     reload.enabled: false
 
 #================================ Autodiscover =======================================
-# Autodiscover all containers with elasticsearch images, and add an separate input for
+# Autodiscover all containers with elasticsearch images, and add a separate input for
 # each container and log type.
-filebeat.autodiscover:
-  providers:
-    - type: docker
-      templates:
-        - condition:
-            and:
-             - not.contains:
-                docker.container.image: elasticsearch
-             - not.contains:
-                docker.container.image: logstash
-             - not.contains:
-                docker.container.image: kibana
-          config:
-            - type: container
-              paths:
-                - /var/lib/docker/containers/${data.docker.container.id}/*.log
-
-processors:
-  - add_cloud_metadata: ~
+#filebeat.autodiscover:
+#  providers:
+#    - type: docker
+#      templates:
+#        - condition:
+#            and:
+#             - not.contains:
+#                docker.container.image: elasticsearch
+#             - not.contains:
+#                docker.container.image: logstash
+#             - not.contains:
+#                docker.container.image: kibana
+#          config:
+#            - type: container
+#              paths:
+#                - /var/lib/docker/containers/${data.docker.container.id}/*.log
+#
+#processors:
+#  - add_cloud_metadata: ~
 
 # Output to Logstash
 output.logstash:
