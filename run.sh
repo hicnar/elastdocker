@@ -43,8 +43,9 @@ elk() {
 }
 
 up() {
+    collect-docker-logs
     elk
-    echo "Visit Kibana: https://localhost:5601"
+    echo "Visit Kibana: https://kibana.proactiveapps.com"
 }
 
 monitoring() {
