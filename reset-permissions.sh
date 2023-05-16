@@ -13,6 +13,10 @@ mkdir -p elasticsearch-data
 
 chmod 777 elasticsearch-data
 
+mkdir -p filebeat-data
+
+chmod 777 filebeat-data
+
 chown -R khycnar *
 
 chgrp -R users *
