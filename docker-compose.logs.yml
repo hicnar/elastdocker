@@ -22,3 +22,5 @@ services:
 #      - /var/lib/docker/containers:/var/lib/docker/containers:Z
       - /var/run/docker.sock:/var/run/docker.sock:Z
       - ./filebeat-data:/var/lib/filebeat/data:Z
+    ports:
+      - "${FILEBEATS_PORT}:${FILEBEATS_PORT}"
