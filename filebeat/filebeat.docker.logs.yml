@@ -79,4 +79,4 @@ xpack.monitoring:
 # Defines if the HTTP endpoint is enabled.
 http.enabled: true
 http.host: 0.0.0.0
-http.port: '${FILEBEATS_PORT}'
+http.port: 5066
