@@ -19,7 +19,7 @@ services:
       ELASTICSEARCH_HOST_PORT: https://${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}
     volumes:
       - ./filebeat/filebeat.docker.logs.yml:/usr/share/filebeat/filebeat.yml:Z
-#      - /var/lib/docker/containers:/var/lib/docker/containers:Z
+      - /var/lib/docker/containers:/var/lib/docker/containers:Z
       - /var/run/docker.sock:/var/run/docker.sock:Z
       - ./filebeat-data:/var/lib/filebeat/data:Z
     ports:

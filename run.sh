@@ -43,7 +43,7 @@ elk() {
 }
 
 up() {
-    collect-docker-logs
+#    collect-docker-logs
     elk
     echo "Visit Kibana: https://kibana.proactiveapps.com"
 }
