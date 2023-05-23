@@ -17,6 +17,4 @@ mkdir -p filebeat-data
 
 chmod 777 filebeat-data
 
-chown -R khycnar *
-
-chgrp -R users *
+chown -R 1000:root ./elasticsearch-data
